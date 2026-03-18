@@ -1,14 +1,20 @@
 import express from "express";
-
+import newRouter from "./routes/newRoutes.js";
+import indexRouter from "./routes/indexRoutes.js";
+import path from 'node:path';
 const app = express();
 
 const viewsPath = path.join(import.meta.dirname, "views");
-const assetsPath = path.join(import.meta.dirname, "public");
+const assetsPath = path.join(import.meta.dirname, "../public");
 
 app.set("views", viewsPath);
 app.set("view engine", "ejs");
 
 app.use(express.static(assetsPath));
+app.use(express.urlencoded({ extended: true }));
+
+app.use("/", indexRouter);
+app.use('/new',newRouter)
 
 app.use((err, req, res, next) => {
   console.error(err);
