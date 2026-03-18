@@ -1,0 +1,15 @@
+<html>
+  
+  <body>
+    <ul>
+  <% messages.forEach(function(msg) { %>
+            <li>
+                <strong><%= msg.user %>:</strong> <%= msg.text %> 
+                <br>
+                <small>(Added: <%= msg.added.toLocaleString() %>)</small>
+            </li>
+            <br>
+        <% }); %>
+</ul>
+  </body>
+</html>
