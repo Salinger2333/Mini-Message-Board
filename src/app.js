@@ -3,12 +3,9 @@ import newRouter from "./routes/newRoutes.js";
 import indexRouter from "./routes/indexRoutes.js";
 import path from "node:path";
 import "dotenv/config";
-import { neon } from "@neondatabase/serverless";
 
 
-const sql = neon(process.env.DATABASE_URL);
-const result = await sql`SELECT version()`;
-console.log(result[0]);
+
 const app = express();
 
 const viewsPath = path.join(import.meta.dirname, "views");
