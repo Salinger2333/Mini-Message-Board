@@ -6,4 +6,4 @@ newRouter
   .get("/", newController.getNewMessages)
   .post("/", newController.newMessage);
 
-export default newRouter;
+module.exports = newRouter;
