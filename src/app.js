@@ -3,8 +3,6 @@ const newRouter = require("./routes/newRoutes");
 const indexRouter = require("./routes/indexRoutes");
 require("dotenv").config();
 
-
-
 const app = express();
 
 
