@@ -4,9 +4,9 @@
     <ul>
   <% messages.forEach(function(msg) { %>
             <li>
-                <strong><%= msg.user %>:</strong> <%= msg.text %> 
+                <strong><%= msg.user_name %>:</strong> <%= msg.content %>
                 <br>
-                <small>(Added: <%= msg.added.toLocaleString() %>)</small>
+                <small>(Added: <%= msg.created_at.toLocaleString() %>)</small>
             </li>
             <br>
         <% }); %>
