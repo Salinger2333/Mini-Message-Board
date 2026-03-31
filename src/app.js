@@ -1,20 +1,17 @@
-import express from "express";
-import newRouter from "./routes/newRoutes.js";
-import indexRouter from "./routes/indexRoutes.js";
-import path from "node:path";
-import "dotenv/config";
+const express = require("express");
+const newRouter = require("./routes/newRoutes");
+const indexRouter = require("./routes/indexRoutes");
+require("dotenv").config();
 
 
 
 const app = express();
 
-const viewsPath = path.join(import.meta.dirname, "views");
-const assetsPath = path.join(import.meta.dirname, "../public");
 
-app.set("views", viewsPath);
+app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
-app.use(express.static(assetsPath));
+app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
