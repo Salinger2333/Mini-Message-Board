@@ -4,6 +4,6 @@ const newRouter = Router();
 
 newRouter
   .get("/", newController.getNewMessages)
-  .post("/", newController.newMessage);
+  .post("/", newController.postNewMessage);
 
 module.exports = newRouter;
